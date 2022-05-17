@@ -1,0 +1,79 @@
+[System]
+Name='Proposed-FLC'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='D_error'
+Range=[0 10]
+NumMFs=5
+MF1='VC':'trimf',[0 0 2.5]
+MF2='C':'trimf',[0 2.5 5]
+MF3='M':'trimf',[2.5 5 7.5]
+MF4='F':'trimf',[5 7.5 10]
+MF5='VF':'trimf',[7.5 10 10]
+
+[Input2]
+Name='Theta_error'
+Range=[-3.14 3.14]
+NumMFs=5
+MF1='BN':'trimf',[-3.14 -3.14 -1.57]
+MF2='N':'trimf',[-3.14 -1.57 0.0004071]
+MF3='Z':'trimf',[-1.57 0.0004071 1.57]
+MF4='P':'trimf',[0.0004071 1.57 3.141]
+MF5='BP':'trimf',[1.57 3.14 3.14]
+
+[Output1]
+Name='wR'
+Range=[0 30]
+NumMFs=5
+MF1='VSR':'trimf',[0 0 7.5]
+MF2='SR':'trimf',[0 7.5 15]
+MF3='MBR':'trimf',[7.5 15 22.5]
+MF4='BR':'trimf',[15 22.5 30]
+MF5='VBR':'trimf',[22.5 30 30]
+
+[Output2]
+Name='wL'
+Range=[0 30]
+NumMFs=5
+MF1='VSL':'trimf',[0 0 7.5]
+MF2='SL':'trimf',[0 7.5 15]
+MF3='MBL':'trimf',[7.5 15 22.5]
+MF4='BL':'trimf',[15 22.5 30]
+MF5='VBL':'trimf',[22.5 30 30]
+
+[Rules]
+1 1, 1 5 (1) : 1
+1 2, 2 4 (1) : 1
+1 3, 1 1 (1) : 1
+1 4, 4 2 (1) : 1
+1 5, 5 1 (1) : 1
+2 1, 1 5 (1) : 1
+2 2, 2 4 (1) : 1
+2 3, 2 2 (1) : 1
+2 4, 4 2 (1) : 1
+2 5, 5 1 (1) : 1
+3 1, 1 5 (1) : 1
+3 2, 2 4 (1) : 1
+3 3, 3 3 (1) : 1
+3 4, 4 2 (1) : 1
+3 5, 5 1 (1) : 1
+4 1, 1 5 (1) : 1
+4 2, 2 4 (1) : 1
+4 3, 4 4 (1) : 1
+4 4, 4 2 (1) : 1
+4 5, 5 1 (1) : 1
+5 1, 1 5 (1) : 1
+5 2, 2 4 (1) : 1
+5 3, 5 5 (1) : 1
+5 4, 4 2 (1) : 1
+5 5, 5 1 (1) : 1
